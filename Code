@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <random>
+#include <time.h>
+
+using namespace std;
+
+vector<string> quotes = {
+    "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+    "The way to get started is to quit talking and begin doing.",
+    "Your time is limited, don't waste it living someone else's life.",
+    "If life were predictable it would cease to be life, and be without flavor.",
+    "If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough.",
+    "If you want to live a happy life, tie it to a goal, not to people or things.",
+    "Happiness is not something ready made. It comes from your own actions."
+};
+
+string getRandomQuote() {
+    // Seed the random number generator
+    srand(time(NULL));
+    int randomIndex = rand() % quotes.size();
+    return quotes[randomIndex];
+}
+
+int main() {
+    cout << "Random quote: " << getRandomQuote() << endl;
+    return 0;
+}
